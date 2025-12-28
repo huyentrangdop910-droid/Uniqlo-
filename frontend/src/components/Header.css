@@ -1,0 +1,66 @@
+/* frontend/src/components/Header.css */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.75rem 1rem 1.5rem; 
+  z-index: 50;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* BIẾN THỂ TRONG SUỐT (TRANG CHỦ) */
+.header-container.transparent {
+  background-color: transparent;
+  color: white;
+}
+.header-container.transparent .header-logo {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.header-container.transparent .floating-icon-button {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* BIẾN THỂ MÀU TRẮNG (TRANG KHÁC) */
+.header-container.solid {
+  background-color: white;
+  color: #111;
+  border-bottom: 1px solid #e5e5e5;
+}
+.header-container.solid .header-logo {
+  color: #111;
+  text-shadow: none;
+}
+.header-container.solid .floating-icon-button {
+  color: #111;
+  text-shadow: none;
+}
+
+/* Style chung */
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.header-logo {
+  font-family: 'Arial Black', Gadget, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.floating-icon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+  transform: scale(1.1); 
+}
+.floating-icon-button:hover {
+  transform: scale(1.2);
+}

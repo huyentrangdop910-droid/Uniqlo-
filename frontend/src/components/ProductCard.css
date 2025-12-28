@@ -1,0 +1,89 @@
+/* frontend/src/components/ProductCard.css */
+
+/* Thẻ sản phẩm */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bọc ảnh (để giữ hiệu ứng phóng to không bị tràn) */
+.product-image-link {
+  display: block;
+  margin-bottom: 0.75rem;
+  position: relative;
+  overflow: hidden; 
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1.25; /* Tỉ lệ khung hình */
+  background-color: #f4f4f5;
+  transition: transform 0.3s ease; /* Hiệu ứng mượt */
+}
+
+/* HIỆU ỨNG 1: "Chuyển động nhẹ" (Phóng to ảnh) */
+.product-image-link:hover .product-image {
+  transform: scale(1.03); /* Phóng to ảnh lên 3% */
+}
+
+/* Chi tiết (Tên, giá, size...) */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; /* Khoảng cách nhỏ giữa các chi tiết */
+}
+
+.product-colors {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  padding-left: 0.25rem;
+}
+
+.product-color-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.product-sizes {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.product-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+}
+
+/* HIỆU ỨNG 2: Chữ đổi màu (thêm gạch chân) */
+.product-card:hover .product-name {
+  text-decoration: underline;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 600; 
+  color: #111; 
+  margin: 0;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  margin-top: 0.1rem;
+}
+
+.rating-count {
+  font-size: 0.75rem;
+  color: #555;
+  margin-left: 0.25rem;
+}

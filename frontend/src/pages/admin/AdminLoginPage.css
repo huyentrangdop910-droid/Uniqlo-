@@ -1,0 +1,176 @@
+/* Reset cơ bản cho trang login */
+.admin-login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Background mờ phía sau giống trong ảnh mẫu */
+    background: url('') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Khung chứa chính (cái thẻ ở giữa) */
+.admin-login-card {
+    position: relative;
+    width: 380px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    overflow: hidden; /* Để cắt phần ảnh thừa */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- PHẦN HEADER ẢNH (Nửa trên) --- */
+.card-header-image {
+    position: relative;
+    height: 45%; /* Chiếm khoảng 45% chiều cao thẻ */
+    /* Ảnh nền lướt sóng */
+    background: url('https://image.uniqlo.com/UQ/ST3/jp/imagesother/25fw_holiday/common/images/heattech-swipe1.png') no-repeat center top;
+    background-size: cover;
+    /* TẠO ĐƯỜNG CẮT CHÉO: Điểm mấu chốt là ở đây */
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+/* Lớp phủ màu xanh lên ảnh */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(55, 189, 193, 0.6), rgba(40, 150, 153, 0.8));
+}
+
+/* --- VÒNG TRÒN LOGO Ở GIỮA --- */
+.card-logo-circle {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: #FF5A6E; /* Màu hồng đậm */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    /* Căn giữa và đặt vị trí đè lên đường cắt */
+    left: 50%;
+    transform: translateX(-50%);
+    top: 38%; /* Điều chỉnh vị trí này để khớp với đường cắt chéo */
+    z-index: 10;
+}
+
+/* --- PHẦN FORM BODY (Nửa dưới) --- */
+.card-form-body {
+    flex-grow: 1; /* Chiếm phần còn lại của chiều cao */
+    padding: 70px 40px 30px 40px; /* Padding top lớn để tránh vòng tròn */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- STYLING CÁC INPUT (Kiểu chỉ có gạch chân) --- */
+.styled-input-group {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.styled-input-group input {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    background: transparent;
+    outline: none;
+}
+
+/* Label trôi nổi */
+.styled-input-group label {
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hiệu ứng khi focus vào input hoặc khi có dữ liệu */
+.styled-input-group input:focus ~ label,
+.styled-input-group input:not(:placeholder-shown) ~ label {
+    top: -15px;
+    font-size: 11px;
+    color: #FF5A6E;
+}
+
+/* Thanh màu hồng chạy khi focus */
+.bar { position: relative; display: block; width: 100%; }
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #FF5A6E;
+    transition: 0.2s ease all;
+}
+.bar:before { left: 50%; }
+.bar:after { right: 50%; }
+.styled-input-group input:focus ~ .bar:before,
+.styled-input-group input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* Link quên mật khẩu */
+.forgot-password-link {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #999;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+/* Nút Đăng nhập */
+.styled-login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF5A6E; /* Màu hồng */
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.styled-login-btn:hover {
+    background-color: #e04a5e;
+}
+
+/* Link đăng ký ở cuối */
+.signup-link-container {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin-top: 20px;
+}
+
+.signup-link-container a {
+    color: #FF5A6E;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -1,0 +1,166 @@
+/* frontend/src/pages/customer/TrangGioHang.css */
+.cart-page-main {
+  padding-top: 6rem; /* Đẩy xuống dưới Header */
+  max-width: 1280px;
+  margin: 0 auto 3rem auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  min-height: 60vh;
+}
+
+.cart-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Bảng */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header của bảng */
+.cart-table-header {
+  background-color: #f8f9fa;
+  border-top: 2px solid #111;
+  border-bottom: 1px solid #e5e5e5;
+}
+.cart-table-header th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+}
+.cart-table-header th:nth-child(1) { width: 40%; } /* Sản phẩm */
+.cart-table-header th:nth-child(2) { width: 15%; } /* Đơn giá */
+.cart-table-header th:nth-child(3) { width: 15%; } /* Số lượng */
+.cart-table-header th:nth-child(4) { width: 15%; } /* Số tiền */
+.cart-table-header th:nth-child(5) { width: 15%; } /* Thao tác */
+
+/* Hàng sản phẩm */
+.cart-item-row td {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: top;
+}
+
+.cart-item-info {
+  display: flex;
+  gap: 1rem;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  background-color: #f4f4f5;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+}
+.cart-item-name {
+  font-weight: 600;
+  color: #111;
+  text-decoration: none;
+}
+.cart-item-name:hover {
+  text-decoration: underline;
+}
+.cart-item-variant {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.25rem;
+}
+
+.cart-item-price,
+.cart-item-total {
+  font-weight: 600;
+}
+
+.cart-item-delete {
+  color: #d90429;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.cart-item-delete:hover {
+  text-decoration: underline;
+}
+
+/* Số lượng */
+.cart-quantity-selector {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100px;
+}
+.cart-quantity-selector button {
+  width: 30px;
+  height: 30px;
+  background: #f8f9fa;
+  border: none;
+  cursor: pointer;
+}
+.cart-quantity-selector span {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+/* frontend/src/pages/customer/TrangGioHang.css */
+/* ... (code cũ của bạn) ... */
+
+/* THÊM MỚI: CSS cho Ô Tích */
+.cart-item-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* THÊM MỚI: Điều chỉnh lại độ rộng các cột */
+.cart-table-header th:nth-child(1) { width: 5%; }  /* Ô tích */
+.cart-table-header th:nth-child(2) { width: 35%; } /* Sản phẩm */
+.cart-table-header th:nth-child(3) { width: 15%; } /* Đơn giá */
+.cart-table-header th:nth-child(4) { width: 15%; } /* Số lượng */
+.cart-table-header th:nth-child(5) { width: 15%; } /* Thành Tiền */
+.cart-table-header th:nth-child(6) { width: 15%; } /* Thao tác */
+
+/* THÊM MỚI: Style cho nút Mua Hàng (khi nó là Link) */
+.cart-checkout-button {
+  display: inline-block; /* Cho phép Link hoạt động như button */
+  text-decoration: none; /* Bỏ gạch chân */
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.cart-checkout-button:hover {
+  background-color: #333;
+}
+/* THÊM VÀO CUỐI: CSS cho nút Phân loại */
+.cart-item-variant-button {
+  background: #f8f9fa;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.cart-item-variant-button:hover {
+  background: #e9ecef;
+}

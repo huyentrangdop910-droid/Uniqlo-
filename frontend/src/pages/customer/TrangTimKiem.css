@@ -1,0 +1,195 @@
+/* frontend/src/pages/customer/TrangTimKiem.css */
+
+/* 1. KHUNG APP CỐ ĐỊNH */
+.search-page-layout {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 6rem 1fr auto; 
+  overflow: hidden;
+}
+
+/* 1a. GHI ĐÈ Header */
+.search-page-layout .header-container {
+  position: relative;
+  grid-row: 1 / 2;
+  z-index: 100;
+}
+
+/* 2. NỘI DUNG (Menu + Footer) SẼ CUỘN */
+.search-page-main-scrollable {
+  grid-row: 2 / 3; 
+  overflow-y: auto; 
+  background-color: white;
+  padding-bottom: 10rem; /* Chừa không gian cho footer cố định */
+}
+
+/* 3. FOOTER CỐ ĐỊNH (Chứa Search + Nav) */
+.search-page-footer-fixed {
+  grid-row: 3 / 4; 
+  width: 100%;
+  background-color: white;
+  z-index: 50;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05); 
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 0.75rem 1.5rem; /* Giảm padding đáy */
+  box-sizing: border-box;
+  
+}
+
+/* 3a. Thanh Tìm kiếm (bên trong footer) */
+.search-footer-bar {
+  position: relative;
+  width: 100%;
+  max-width: 1280px; 
+  margin: 0 auto 1rem auto; 
+}
+.search-footer-input {
+  width: 100%;
+  padding: 0.8rem 1.5rem 0.8rem 3.5rem; 
+  font-size: 1rem;
+  border-radius: 9999px; 
+  border: 1px solid #ccc;
+  box-sizing: border-box; 
+  font-family: 'Nunito', sans-serif;
+  background-color: #f1f3f5; 
+}
+.search-footer-input:focus {
+  outline: none;
+  border-color: #111;
+  background-color: white;
+}
+.search-footer-icon {
+  position: absolute;
+  left: 1.25rem; 
+  top: 50%;
+  transform: translateY(-50%);
+  color: #777;
+}
+
+/* 3b. GHI ĐÈ CSS CỦA ThanhDieuHuongNoi */
+/* Bảo nó nằm yên bên trong footer, không "nổi" nữa */
+/*.search-page-footer-fixed .floating-nav {
+    
+    
+  position: fixed; 
+  bottom: 0; 
+  width: 100%;
+  max-width: 400px; 
+  margin:0 auto; 
+  padding: 0; /
+  
+  justify-content: center;
+  gap: 5rem; 
+  
+  
+}*/
+.search-page-footer-fixed .floating-nav {
+  position: relative !important; 
+  bottom: auto !important; 
+  left: auto !important; 
+  transform: none !important; 
+  
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto; 
+  padding: 0; 
+  box-shadow: none !important; 
+  background-color: transparent !important; 
+  
+  /* CĂN GIỮA ICON */
+  justify-content: center !important; 
+  gap: 5rem; /* Thêm khoảng cách */
+}
+.search-page-footer-fixed .floating-nav-button {
+ /* box-shadow: none; /* Xóa bóng đổ của từng nút */
+  background-color: white; /* Nền trắng (cho 🔍) */
+  color: #333;
+}
+/* Nút X (ở giữa) */
+.search-page-footer-fixed .floating-nav-button.search-toggle.active {
+  background-color: #111; /* Nền đen */
+  color: white;
+  transform: none; /* Tắt xoay */
+}
+
+
+/* CSS để nhúng Menu và Footer vào trong Main (phần cuộn) */
+.search-page-main-scrollable .menu-overlay {
+  position: relative; 
+  max-height: none; 
+  animation: none; 
+  box-shadow: none;
+  border-radius: 0;
+  overflow-y: visible; 
+}
+.search-page-main-scrollable .menu-header {
+  display: none; 
+}
+.search-page-main-scrollable .footer-container {
+  background-color: white; 
+  border-top: 1px solid #e5e5e5;
+  margin-top: 3rem;
+  padding: 3rem 1.5rem;
+}
+/* 3b. Hàng 3 icon (bên trong footer) */
+/* ===== THÊM ĐOẠN NÀY VÀO CUỐI FILE ===== */
+
+/* THÊM VÀO CUỐI: CSS cho phần Tổng tiền */
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Căn phải */
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.cart-summary-total {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.cart-summary-total span {
+  display: inline-block;
+  min-width: 200px;
+  text-align: right;
+}
+.cart-summary-total .total-amount {
+  font-size: 1.5rem;
+  color: #d90429; /* Màu đỏ */
+}
+
+.cart-checkout-button {
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cart-checkout-button:hover {
+  background-color: #333;
+}
+/* ... (code cũ giữ nguyên) ... */
+.search-results-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem; /* Thêm padding trên dưới */
+}
+
+.search-status {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}

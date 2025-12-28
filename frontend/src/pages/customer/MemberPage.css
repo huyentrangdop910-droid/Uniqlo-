@@ -1,0 +1,275 @@
+/* frontend/src/pages/customer/MemberPage.css */
+
+.member-page-layout {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-main-container {
+  padding-top: 6rem; /* Đẩy xuống dưới Header */
+  flex-grow: 1;
+  padding-bottom: 6rem;
+}
+
+.member-wrapper {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* --- SIDEBAR --- */
+.member-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Avatar Box */
+.member-avatar-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0 1rem 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.avatar-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+}
+.avatar-info {
+  display: flex;
+  flex-direction: column;
+}
+.username {
+  font-weight: 600;
+  color: #333;
+}
+.edit-profile {
+  font-size: 0.8rem;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.edit-profile:hover { color: #d90429; }
+
+/* Nav Items */
+.member-nav {
+  display: flex;
+  flex-direction: column;
+}
+.member-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s;
+}
+.member-nav-item:hover { color: #d90429; }
+.member-nav-item.active {
+  color: #d90429;
+  font-weight: 600;
+}
+.member-nav-item.logout { color: #555; margin-top: 1rem; }
+
+/* --- CONTENT --- */
+.member-content {
+  flex-grow: 1;
+  background-color: white;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  padding: 2rem;
+  min-height: 500px;
+}
+
+.member-section-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #efefef;
+}
+
+/* Profile Tabs */
+.profile-tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #efefef;
+}
+.profile-tab-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid transparent;
+}
+.profile-tab-btn.active {
+  color: #d90429;
+  border-bottom-color: #d90429;
+}
+
+/* Forms */
+.profile-form {
+  max-width: 600px;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  width: 150px;
+  color: #555;
+  font-size: 0.9rem;
+  text-align: right;
+  margin-right: 1.5rem;
+}
+.form-input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  font-family: 'Nunito', sans-serif;
+}
+.form-input:focus { outline: none; border-color: #777; }
+.form-input.disabled { background-color: #f9f9f9; color: #999; }
+
+/* Buttons */
+.member-btn-primary {
+  background-color: #d90429;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 174px; /* Căn lề với input */
+}
+.member-btn-outline {
+  background-color: white;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* --- GIỮ LẠI CSS CHO ĐƠN HÀNG (Shopee Style) --- */
+/* Bạn dán lại đoạn CSS .shopee-order-card, .shopee-item-row... từ bước trước vào đây */
+/* (Nếu chưa có thì tôi sẽ gửi lại bên dưới) */
+
+.order-list { display: flex; flex-direction: column; gap: 1rem; }
+.shopee-order-card { border: 1px solid #eaeaea; border-radius: 2px; padding: 1.5rem; }
+.shopee-order-header { display: flex; justify-content: space-between; border-bottom: 1px solid #eaeaea; padding-bottom: 0.75rem; margin-bottom: 1rem; }
+.shopee-order-status { color: #d90429; text-transform: uppercase; font-size: 0.85rem; }
+.shopee-item-row { display: flex; gap: 1rem; border-bottom: 1px solid #f5f5f5; padding: 0.75rem 0; }
+.shopee-item-img { width: 80px; height: 80px; object-fit: cover; border: 1px solid #e1e1e1; }
+.shopee-item-info { flex: 1; }
+.shopee-item-name { font-size: 1rem; color: #000; margin-bottom: 0.25rem; }
+.shopee-item-variant { font-size: 0.85rem; color: #777; }
+.shopee-order-total { font-size: 1rem; margin-bottom: 0; text-align: right; padding-top: 1rem; }
+.shopee-order-total .total-price { color: #d90429; font-size: 1.5rem; font-weight: 600; margin-left: 0.5rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .member-wrapper { flex-direction: column; }
+  .member-sidebar { width: 100%; border-bottom: 1px solid #e8e8e8; padding-bottom: 1rem; }
+  .form-group { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .form-group label { width: 100%; text-align: left; }
+  .member-btn-primary { margin-left: 0; width: 100%; }
+}
+/* CSS CHO TAB TRẠNG THÁI ĐƠN HÀNG */
+.order-status-tabs {
+  display: flex;
+  background: white;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.status-tab-btn {
+  flex: 1; /* Chia đều chiều rộng */
+  padding: 1rem 0;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.status-tab-btn:hover {
+  color: #d90429;
+}
+
+.status-tab-btn.active {
+  color: #d90429;
+  border-bottom-color: #d90429;
+  font-weight: 600;
+}
+/* THÊM VÀO CUỐI FILE CSS */
+
+.profile-info-view {
+  max-width: 600px;
+}
+.info-row {
+  display: flex;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.info-row .label {
+  width: 150px;
+  color: #777;
+}
+.info-row .value {
+  font-weight: 500;
+  color: #333;
+}
+
+.info-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.member-btn-danger {
+  background-color: white;
+  border: 1px solid #d90429;
+  color: #d90429;
+  padding: 0.8rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.member-btn-danger:hover {
+  background-color: #fff5f6;
+}

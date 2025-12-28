@@ -1,0 +1,174 @@
+/* frontend/src/pages/customer/ProductListPage.css */
+
+.product-list-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.video-banner-container {
+  width: 100%;
+  padding-top: 6rem; /* Đẩy xuống dưới Header CỐ ĐỊNH */
+  background-color: #000; /* Màu nền lót cho video */
+}
+
+.video-banner {
+  width: 100%;
+  height: 90vh; /* Chiều cao video (60% chiều cao màn hình) */
+  object-fit: cover; /* Đảm bảo video lấp đầy khung */
+  display: block;
+}
+
+/* Main Content */
+.product-list-main {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3rem 1.5rem;
+  flex-grow: 1; /* Đẩy footer xuống dưới */
+  box-sizing: border-box;
+}
+.product-list-main.no-banner {
+  padding-top: 7.5rem; /* 6rem (header) + 1.5rem (padding) */
+}
+
+/* SỬA: Nếu CÓ banner, main không cần padding-top nhiều */
+.product-list-main.has-banner {
+   padding-top: 1.5rem; /* Chỉ cần padding bình thường */
+}
+
+
+
+/* Lưới sản phẩm */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 cột trên mobile */
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1.5rem;/* 4 cột trên desktop */
+  }
+}
+
+/* Thẻ sản phẩm */
+/*.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image-link {
+  display: block;
+  margin-bottom: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1.25; 
+  background-color: #fcfcfe;
+  transition: transform 0.3s ease;
+}
+.product-image-link:hover .product-image {
+  transform: scale(1.03); 
+}
+.product-card:hover .product-name  {
+ 
+  color: #71a2bc; 
+}
+.product-card:hover .product-price  {
+  
+  
+  color:#71a2bc; 
+}
+.product-card:hover .product-sizes  {
+ 
+  
+  color: #71a2bc; 
+}
+
+
+.product-colors {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.product-color-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.product-info {
+  text-align: left;
+}
+
+.product-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.25rem 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}*/
+
+.filter-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e9ecef; /* Viền mỏng hơn */
+  padding-bottom: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.75rem; /* SỬA: Đây là khoảng cách giữa các nút */
+  flex-wrap: wrap; 
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem; /* Khoảng cách giữa chữ và icon */
+  background-color: white;
+  border: 1px solid #ced4da; /* Viền xám nhạt */
+  border-radius: 9999px; /* Bo tròn */
+  
+  /* SỬA: Làm nút nhỏ lại */
+  padding: 0.4rem 0.9rem; 
+  font-size: 0.825rem; /* Chữ nhỏ hơn */
+  
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: #f8f9fa; /* Màu khi di chuột */
+}
+
+/* Nút đầu tiên (Tên BST) làm nổi bật hơn */
+.filter-buttons .filter-btn:first-child {
+  background-color: #f1f3f5;
+  border-color: #f1f3f5;
+  font-weight: 600;
+}
+
+.sort-button {
+  /* Tự đẩy sang phải */
+}
+

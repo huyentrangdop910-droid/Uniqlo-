@@ -1,0 +1,298 @@
+/* frontend/src/pages/customer/TrangChiTietSanPham.css */
+
+.pdp-page {
+  background-color: #fff;
+}
+
+.pdp-main-content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 8rem 1.5rem; /* Đẩy xuống dưới Header và chừa chỗ cho Navbar */
+}
+
+/* Layout 2 cột */
+.pdp-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media (min-width: 992px) { /* Desktop */
+  .pdp-layout {
+    flex-direction: row;
+  }
+}
+
+/* Cột Trái (Ảnh, Mô tả) */
+.pdp-col-left {
+  flex: 2; /* Chiếm 2/3 không gian */
+  width: 100%;
+}
+
+.pdp-images img {
+  width: 100%;
+  background-color: #f4f4f5;
+}
+
+.pdp-info-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+.pdp-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Cột Phải (Thông tin, Sticky) */
+.pdp-col-right {
+  flex: 1; /* Chiếm 1/3 không gian */
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .pdp-col-right {
+    /* Đây là chìa khóa cho hiệu ứng sticky */
+    position: sticky;
+    top: 6rem; /* Giữ nó ở 6rem (chiều cao header) */
+    align-self: flex-start; /* Quan trọng */
+    height: calc(100vh - 6rem); /* Chiều cao tối đa */
+    /*overflow-y: auto; /* Cho phép nó tự cuộn nếu bị dài */
+  }
+}
+
+.pdp-sticky-box {
+  /* Hộp chứa nội dung bên phải */
+  padding-bottom: 2rem;
+}
+
+.pdp-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.pdp-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.pdp-divider {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 1.5rem 0;
+}
+
+/* Các nhóm tùy chọn */
+.pdp-option-group {
+  margin-bottom: 1.5rem;
+}
+.pdp-option-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.pdp-option-label span {
+  font-weight: 400;
+  text-transform: none;
+}
+
+/* Nút chọn màu */
+.pdp-color-swatches {
+  display: flex;
+  gap: 0.5rem;
+}
+.pdp-color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.pdp-color-swatch.selected {
+  border: 2px solid #111;
+  outline: 1px solid white; /* Hiệu ứng viền kép */
+}
+
+/* Nút chọn size */
+.pdp-size-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.pdp-size-btn {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.pdp-size-btn.selected {
+  background-color: #111;
+  color: white;
+  border-color: #111;
+}
+
+/* Nút số lượng */
+.pdp-quantity-selector {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+}
+.pdp-quantity-selector button {
+  width: 40px;
+  height: 40px;
+  background: #f8f9fa;
+  border: none;
+  cursor: pointer;
+}
+.pdp-quantity-selector span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+/* Nút hành động */
+.pdp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.pdp-btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background-color: #111;
+  color: white;
+  border: 1px solid #111;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pdp-btn-outline {
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+  color: #111;
+  border: 1px solid #111;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: block; /* SỬA: Bảo nó chiếm 1 hàng */
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+/* Accordion (Mô tả, Chi tiết) */
+.accordion-item {
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.accordion-content {
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+.accordion-content p {
+  margin: 0;
+}
+/* LAYOUT MỚI CHO GALLERY ẢNH */
+/* ===== THÊM MỚI: CSS CHO LAYOUT GHÉP ẢNH ===== */
+
+/* ===== THÊM MỚI: CSS CHO LAYOUT GHÉP ẢNH ===== */
+
+.pdp-image-collage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Khoảng cách giữa các HÀNG (Hàng 1 và Hàng 2) */
+}
+
+.pdp-image-row {
+  display: flex;
+  gap: 0.5rem; /* Khoảng cách giữa 2 ảnh trong Hàng 1 */
+}
+
+.pdp-image-item {
+  width: 100%; /* Ảnh sẽ tự động co giãn để vừa */
+  height: auto;
+  background-color: #f4f4f5;
+}
+/* THÊM VÀO CUỐI: CSS cho Danh sách Review */
+.review-list {
+  margin-top: 2rem;
+}
+.review-item {
+  border-top: 1px solid #e5e5e5;
+  padding: 1.5rem 0;
+}
+.review-rating {
+  display: flex;
+  gap: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+.review-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+.review-comment {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0 0 0.75rem 0;
+}
+.review-meta {
+  font-size: 0.8rem;
+  color: #777;
+  margin: 0;
+}
+/* THÊM VÀO CUỐI: CSS cho Nút Xóa Review */
+.review-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.review-delete-btn {
+  background: none;
+  border: none;
+  color: #383031;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0;
+}
+.review-delete-btn:hover {
+  text-decoration: underline;
+}
+.review-edit-btn {
+  background: none;
+  border: none;
+  color: #d90429;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0;
+}
+.review-edit-btn:hover {
+  text-decoration: underline;
+}

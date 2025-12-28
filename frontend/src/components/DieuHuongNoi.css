@@ -1,0 +1,48 @@
+.floating-nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 50;
+  padding: 0;
+  background-color: transparent;
+}
+
+.floating-nav-button {
+  background-color: white;
+  border: none;
+  border-radius: 9999px;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  color: #333;
+}
+.floating-nav-button:hover {
+  transform: scale(1.05);
+}
+/* THÊM VÀO CUỐI FILE */
+
+/* Nút 🔍 và X */
+.floating-nav-button.search-toggle {
+  
+  transform: scale(1.0); /* Tắt hiệu ứng hover mặc định */
+  transition: transform 0.2s ease,background-color 0.2s ease, color 0.2s ease;
+}
+.floating-nav-button.search-toggle:hover {
+  transform: scale(1.05); /* Vẫn giữ hover */
+}
+
+/* Khi mở (icon là X), xoay 90 độ */
+.floating-nav-button.search-toggle.active {
+  
+  background-color: #111; /* Nền đen */
+  color: white;
+}

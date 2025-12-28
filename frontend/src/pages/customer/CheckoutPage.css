@@ -1,0 +1,238 @@
+/* frontend/src/pages/customer/CheckoutPage.css */
+
+.checkout-page {
+  background-color: #f5f5f5; /* Nền xám nhạt */
+  min-height: 100vh;
+  padding-top: 6rem; /* Đẩy xuống dưới Header */
+  padding-bottom: 3rem;
+}
+
+.checkout-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.checkout-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.checkout-title::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 24px;
+  background-color: #d90429; /* Vạch đỏ bên trái */
+}
+
+/* Khối Địa chỉ */
+.checkout-section {
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.address-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d90429;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.address-content {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+}
+.address-name { font-weight: 700; }
+.address-phone { font-weight: 700; }
+.address-detail { color: #555; }
+.address-change-btn {
+  margin-left: auto;
+  color: #05a;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Danh sách sản phẩm */
+.checkout-product-list {
+  width: 100%;
+  border-collapse: collapse;
+}
+.checkout-product-header th {
+  text-align: left;
+  color: #777;
+  font-weight: 500;
+  padding-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.checkout-product-row td {
+  padding: 1rem 0;
+  border-top: 1px solid #f5f5f5;
+  vertical-align: top;
+}
+.checkout-product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #e5e5e5;
+}
+.checkout-product-name {
+  margin-left: 1rem;
+  font-weight: 500;
+}
+.checkout-product-variant {
+  display: block;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.25rem;
+}
+
+/* Phương thức thanh toán */
+.payment-methods {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.payment-method-btn {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #e5e5e5;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 2px;
+}
+.payment-method-btn:hover {
+  border-color: #d90429;
+  color: #d90429;
+}
+.payment-method-btn.active {
+  border-color: #d90429;
+  color: #d90429;
+  position: relative;
+}
+/* Tam giác góc phải (active) */
+.payment-method-btn.active::after {
+  content: '✓';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #d90429;
+  color: white;
+  font-size: 0.6rem;
+  padding: 0 2px;
+}
+
+/* Tổng kết */
+.checkout-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f5f5f5;
+}
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  font-size: 0.9rem;
+  color: #555;
+}
+.checkout-row.total {
+  font-size: 1.1rem;
+  color: #111;
+  margin-top: 1rem;
+}
+.checkout-total-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d90429;
+}
+
+.checkout-btn {
+  background-color: #d90429;
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.checkout-btn:hover {
+  background-color: #c10324;
+}
+/* CSS cho Modal Chọn Địa Chỉ */
+.modal-overlay-fixed {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-address {
+  background: white;
+  width: 600px;
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal-header h3 { margin: 0; font-size: 1.1rem; }
+.modal-header button { background: none; border: none; cursor: pointer; }
+
+.modal-body {
+  padding: 1rem 1.5rem;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #eee;
+  text-align: right;
+}
+.btn-cancel {
+  padding: 0.6rem 2rem;
+  background: white;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+/* Badge mặc định nhỏ */
+.badge-default-mini {
+  font-size: 0.7rem;
+  color: #d90429;
+  border: 1px solid #d90429;
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,158 @@
+/* STAFF LOGIN CSS */
+
+/* Reset cơ bản */
+.staff-login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5; /* Màu nền nhẹ nhàng */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Khung chứa chính */
+.staff-login-card {
+    position: relative;
+    width: 380px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; /* Bo góc nhẹ */
+}
+
+/* --- HEADER ẢNH --- */
+.card-header-image {
+    position: relative;
+    height: 45%;
+    /* Bạn có thể đổi ảnh khác nếu thích */
+    background: url('https://image.uniqlo.com/UQ/ST3/jp/imagesother/25fw_holiday/common/images/heattech-swipe1.png') no-repeat center top;
+    background-size: cover;
+    /* Cắt chéo */
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+
+/* Overlay màu XANH DƯƠNG cho Staff */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradient xanh dương */
+    background: linear-gradient(to bottom, rgba(74, 144, 226, 0.6), rgba(0, 83, 179, 0.8));
+}
+
+/* --- LOGO TRÒN --- */
+.card-logo-circle {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: #4A90E2; /* Màu Xanh Dương chủ đạo */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    
+    left: 50%;
+    transform: translateX(-50%);
+    top: 38%; 
+    z-index: 10;
+    border: 3px solid white; /* Thêm viền trắng cho nổi */
+}
+
+/* --- FORM BODY --- */
+.card-form-body {
+    flex-grow: 1;
+    padding: 70px 40px 30px 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* --- INPUT STYLING --- */
+.styled-input-group {
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.styled-input-group input {
+    font-size: 16px;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
+    background: transparent;
+    outline: none;
+    color: #333;
+}
+
+.styled-input-group label {
+    color: #999;
+    font-size: 12px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 10px;
+    transition: 0.2s ease all;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hiệu ứng focus - đổi màu label sang xanh */
+.styled-input-group input:focus ~ label,
+.styled-input-group input:not(:placeholder-shown) ~ label {
+    top: -15px;
+    font-size: 11px;
+    color: #4A90E2; /* Màu xanh */
+}
+
+/* Thanh gạch chân chạy hiệu ứng */
+.bar { position: relative; display: block; width: 100%; }
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    position: absolute;
+    background: #4A90E2; /* Màu xanh */
+    transition: 0.2s ease all;
+}
+.bar:before { left: 50%; }
+.bar:after { right: 50%; }
+.styled-input-group input:focus ~ .bar:before,
+.styled-input-group input:focus ~ .bar:after {
+    width: 50%;
+}
+
+/* Nút Đăng nhập - Màu Xanh */
+.styled-login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #4A90E2; /* Màu xanh */
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(74, 144, 226, 0.3);
+}
+
+.styled-login-btn:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(74, 144, 226, 0.4);
+}
