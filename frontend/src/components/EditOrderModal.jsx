@@ -4,13 +4,11 @@ import { X, MapPin, CreditCard, Package } from 'lucide-react';
 import AddressBook from './AddressBook'; 
 import './EditOrderModal.css';
 
-// SỬA: Nhận thêm prop 'onPayNow'
 const EditOrderModal = ({ order, onClose, onUpdateAddress, onUpdatePayment, onPayNow }) => {
   const [isEditingAddress, setIsEditingAddress] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState(order.paymentMethod);
   const [isSaving, setIsSaving] = useState(false);
 
-  // State lưu địa chỉ hiển thị
   const [deliveryAddress, setDeliveryAddress] = useState({
       fullName: order.shippingName,
       phoneNumber: order.shippingPhone,
