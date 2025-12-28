@@ -1,20 +1,20 @@
 #  Rentzy - Hệ thống Bán hàng Thời trang (Uniqlo Clone)
 
 
-## 🚀 Công nghệ sử dụng
+## Công nghệ sử dụng
 - **Backend:** Java Spring Boot 3.0, Hibernate, JWT.
 - **Frontend:** ReactJS, Vite.
 - **Database:** MySQL.
 - **Tools:** Docker, DBeaver, VS Code.
 
-## ⚙️ Hướng dẫn Cài đặt & Chạy
+## Hướng dẫn Cài đặt & Chạy
 
 ### 1. Chuẩn bị Database
 1. Tạo database trong MySQL tên là: `rentzy_store`
 2. Import file `database.sql` (nằm ở thư mục gốc) vào database vừa tạo.
 3. **Lưu ý cấu hình:**
    - Mở file `backend/src/main/resources/application.properties`.
-   - Cập nhật `username` và `password` MySQL tương ứng với máy của bạn.
+   - Cập nhật `username` và `password` MySQL tương ứng với máy.
 
 ### 2. Chạy Backend (Spring Boot)
 cd backend
