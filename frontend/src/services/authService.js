@@ -1,4 +1,4 @@
-// URL backend (đã sửa, phải có /v1)
+
 const API_URL = 'http://localhost:8080/api/v1';
 
 /**
@@ -22,7 +22,7 @@ const handleResponse = async (response) => {
     throw new Error(errorText || `Lỗi ${response.status}`);
   }
 
-  // Nếu OK (2xx), chúng ta không biết nó là JSON hay TEXT
+  
   //
   const responseClone = response.clone();
   
@@ -80,10 +80,7 @@ export const login = async (username, password) => {
 };
 
 
-/**
- * (Tùy chọn) Gọi API lấy thông tin người dùng hiện tại
- * *
- */
+
 
 export const addToCart = async (cartData) => {
   // Lấy token từ localStorage
@@ -94,7 +91,7 @@ export const addToCart = async (cartData) => {
     throw new Error('Bạn cần đăng nhập để thêm vào giỏ hàng.');
   }
 
-  const response = await fetch(`${API_URL}/cart/add`, { // SỬA: URL API là /api/v1/auth/cart/add
+  const response = await fetch(`${API_URL}/cart/add`, { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -110,20 +107,17 @@ export const addToCart = async (cartData) => {
     throw new Error(errorText || `Lỗi ${response.status}`);
   }
   
-  // API này chỉ trả về text ("Thêm vào giỏ hàng thành công")
+  
   //
   return response.text(); 
 };
 
 
-/**
- * THÊM MỚI: Gọi API Lấy thông tin giỏ hàng
- */
 
 
-/**
- * THÊM MỚI: Gửi 1 review mới
- */
+
+
+
 export const createReview = async (reviewData) => {
   const token = localStorage.getItem('userToken');
   if (!token) throw new Error('Bạn cần đăng nhập để đánh giá.');

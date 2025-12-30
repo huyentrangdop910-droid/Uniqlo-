@@ -1,5 +1,4 @@
-/* --- src/pages/customer/AuthPage.css --- */
-/* (CSS cho giao diện Đăng nhập/Đăng ký kiểu Zara) */
+
 
 .auth-page-container {
   display: flex;
@@ -165,7 +164,6 @@
     margin-bottom: 1.5rem;
   }
   
-  /* Cần logo riêng cho mobile vì cột ảnh đã bị ẩn */
-  /* (Bạn có thể thêm logo RENTZY vào .auth-form-wrapper nếu muốn) */
+  
 }
 
