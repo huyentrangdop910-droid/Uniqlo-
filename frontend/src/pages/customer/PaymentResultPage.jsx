@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { CheckCircle, XCircle, Home } from 'lucide-react';
-// Import đầy đủ các hàm API
+
 import { placeOrder, updateOrderStatus } from '../../services/authService';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';

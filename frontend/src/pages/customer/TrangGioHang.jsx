@@ -21,7 +21,7 @@ const calculateTotal = (items) => {
 };
 
 // ===== Component Hàng sản phẩm (NÂNG CẤP) =====
-// THÊM: props mới: onToggle, isSelected
+
 const CartItemRow = ({ item, onUpdate, onDelete, onToggle, isSelected , onEdit}) => {
   
   const lineTotal = item.price * item.quantity;
@@ -231,13 +231,13 @@ const TrangGioHang = () => {
           </tbody>
         </table>
 
-        {/* SỬA: Phần tổng tiền (dựa trên state mới) */}
+        
         <div className="cart-summary">
           <div className="cart-summary-total">
             <span>Tổng cộng ({selectedProducts.length} sản phẩm):</span>
             <span className="total-amount">{formatPrice(totalAmount)}</span>
           </div>
-          {/* SỬA: Đổi tên nút + Bọc Link (cho Yêu cầu 6) */}
+          
           <button 
   className="cart-checkout-button"
   onClick={() => {

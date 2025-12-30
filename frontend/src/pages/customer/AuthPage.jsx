@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './AuthPage.css'; // SỬA: Tạm thời comment lại để khắc phục lỗi
+import './AuthPage.css'; 
 // Import service
-// SỬA: Bỏ đuôi .js ở cuối đường dẫn
+
 import { register, login , getUserProfile } from '../../services/authService';
 
 
 // --- HÌNH ẢNH NỀN ---
-// Thay thế bằng URL ảnh của bạn
+
 const BACKGROUND_IMAGE_URL = 'https://im.uniqlo.com/global-cms/spa/res8f8ec8209e2b0db17ff48479cf04a017fr.jpg';
 
 // ===== Component Form Đăng Nhập =====
@@ -95,12 +95,7 @@ const AuthPage = () => {
       alert('Đăng nhập thành công!');
       navigate('/'); // Chuyển về trang chủ hoặc trang trước đó
       
-      // Tắt modal hoặc chuyển hướng (tùy logic cũ của bạn)
-      // Ví dụ nếu đang ở trang /auth thì chuyển về Home
-      // navigate('/'); 
-      
-      // Nếu đang dùng Modal (setIsLoginView) thì gọi prop onClose nếu có
-      // Hoặc reload trang để cập nhật Header
+     
       window.location.reload(); 
 
     } catch (error) {
@@ -117,7 +112,6 @@ const AuthPage = () => {
     const address = e.target.elements['reg-address'].value || ''; // Gửi chuỗi rỗng nếu không nhập
     
     try {
-      // SỬA: Đã bỏ comment
       await register({ username,password, phone, address });
       alert('Đăng ký thành công! Vui lòng đăng nhập.');
       setIsLoginView(true); // Chuyển sang tab đăng nhập

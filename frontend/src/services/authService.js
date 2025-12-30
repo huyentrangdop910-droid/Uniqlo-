@@ -3,10 +3,8 @@ const API_URL = 'http://localhost:8080/api/v1';
 
 /**
  * Hàm trợ giúp xử lý phản hồi từ API
- *
- * SỬA LỖI QUAN TRỌNG:
- * Chúng ta phải kiểm tra "response.ok" TRƯỚC KHI cố gắng parse .json().
- * Đây là lý do bạn bị lỗi "Unexpected end of JSON input" khi server trả về 403.
+ * @param {Response} response - Đối tượng phản hồi từ fetch
+ * @returns {Promise<any>} - Dữ liệu đã phân tích hoặc thông báo lỗi
  */
 /**
  * THÊM MỚI: Gọi API Thêm vào giỏ hàng
@@ -16,25 +14,7 @@ const API_URL = 'http://localhost:8080/api/v1';
  * @param {string} cartData.size - Size đã chọn
  * @param {string} cartData.color - Mã màu hex đã chọn
  */
-/*const handleResponse = async (response) => {
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error("Phản hồi lỗi từ server:", errorText);
-    throw new Error(errorText || `Lỗi ${response.status}: ${response.statusText}`);
-  }
-
-  try {
-    // Thử parse JSON, nếu thất bại (vì body rỗng) thì trả về text
-    const data = await response.json();
-    return data;
-  } catch (e) {
-    return response.text(); // Trả về text nếu không phải JSON
-  }
-};*/
-/**
- * Hàm trợ giúp xử lý phản hồi từ API
- * (SỬA: Dùng clone() để tránh lỗi "body stream already read")
- */
+// Hàm trợ giúp xử lý phản hồi từ API
 const handleResponse = async (response) => {
   if (!response.ok) {
     // Nếu là lỗi (4xx, 5xx), luôn đọc text
@@ -43,8 +23,7 @@ const handleResponse = async (response) => {
   }
 
   // Nếu OK (2xx), chúng ta không biết nó là JSON hay TEXT
-  // (ví dụ: getCart là JSON, deleteCartItem là TEXT)
-  // Vì vậy, chúng ta clone nó.
+  //
   const responseClone = response.clone();
   
   try {
@@ -60,7 +39,7 @@ const handleResponse = async (response) => {
 
 /**
  * Gọi API Đăng Ký
- * (Chấp nhận 1 object userData, code này đã đúng)
+ * 
  */
 export const register = async (userData) => {
   const response = await fetch(`${API_URL}/auth/register`, {
@@ -103,7 +82,7 @@ export const login = async (username, password) => {
 
 /**
  * (Tùy chọn) Gọi API lấy thông tin người dùng hiện tại
- * (Lưu ý: Bạn chưa tạo endpoint /api/v1/auth/me ở backend)
+ * *
  */
 
 export const addToCart = async (cartData) => {
@@ -119,28 +98,28 @@ export const addToCart = async (cartData) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      // THÊM: Gửi Token để backend biết bạn là ai
+
       'Authorization': `Bearer ${token}` 
     },
     body: JSON.stringify(cartData),
   });
   
-  // Dùng lại hàm handleResponse (nhưng sửa 1 chút)
+
   if (!response.ok) {
     const errorText = await response.text();
     throw new Error(errorText || `Lỗi ${response.status}`);
   }
   
   // API này chỉ trả về text ("Thêm vào giỏ hàng thành công")
-  // nên chúng ta .text() thay vì .json()
+  //
   return response.text(); 
 };
-// ... (code handleResponse, register, login, addToCart giữ nguyên) ...
+
 
 /**
  * THÊM MỚI: Gọi API Lấy thông tin giỏ hàng
  */
-// ... (code cũ giữ nguyên) ...
+
 
 /**
  * THÊM MỚI: Gửi 1 review mới
@@ -189,7 +168,7 @@ export const getCart = async () => {
   // API này trả về 1 file JSON (CartDto), nên ta dùng handleResponse
   return handleResponse(response); 
 };
-// ... (hàm getCart giữ nguyên) ...
+
 
 /**
  * THÊM MỚI: Xóa 1 món hàng
@@ -219,7 +198,7 @@ export const updateCartItemQuantity = async (itemId, change) => {
   });
   return handleResponse(response);
 };
-// ... (code cũ giữ nguyên) ...
+
 
 /**
  * THÊM MỚI: Lấy chi tiết sản phẩm (để lấy size/màu có sẵn)
@@ -250,22 +229,13 @@ export const updateCartItemVariant = async (itemId, variantData) => {
   return handleResponse(response);
 };
 
-/*export const searchProducts = async (query) => {
-  const response = await fetch(`${API_URL}/products/search?query=${query}`, {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-  return handleResponse(response); // Trả về một mảng [Product]
-};*/
-// frontend/src/services/authService.js
 
-// ... các hàm khác ...
 
 // Cập nhật hàm searchProducts
 export const searchProducts = async (query, minPrice = 0, maxPrice = 9999999999) => {
     try {
         // Tạo URL với các tham số: query, min, max
-        // Backend API: /api/v1/products/search?query=...&min=...&max=...
+
         const url = `http://localhost:8080/api/v1/products/search?query=${encodeURIComponent(query)}&min=${minPrice}&max=${maxPrice}`;
         
         const response = await fetch(url, {
@@ -288,8 +258,8 @@ export const searchProducts = async (query, minPrice = 0, maxPrice = 9999999999)
 /**
  * (Tùy chọn) Gọi API lấy thông tin người dùng hiện tại
  */
-// ... (code getMe giữ nguyên) ...
-// ... (code getReviewsForProduct giữ nguyên) ...
+
+
 
 /**
  * THÊM MỚI: Xóa 1 review
@@ -322,7 +292,7 @@ export const getMe = async () => {
   
   return handleResponse(response);
 };
-// ... (code cũ)
+
 
 /**
  * THÊM MỚI: Sửa review
@@ -390,7 +360,7 @@ export const buyNow = async (cartData) => {
   });
   return handleResponse(response); 
 };
-// ... (các code cũ giữ nguyên) ...
+
 
 /**
  * API ĐỊA CHỈ
@@ -469,9 +439,9 @@ export const updateOrderPaymentMethod = async (orderId, method) => {
   });
   return handleResponse(response);
 };
-// frontend/src/services/authService.js
 
-// ... (các hàm cũ) ...
+
+
 
 /**
  * THÊM MỚI: Cập nhật trạng thái đơn hàng (VD: Đã Thanh Toán)
@@ -492,7 +462,7 @@ export const updateOrderStatus = async (orderId, status) => {
  */
 // frontend/src/services/authService.js
 
-// ... (các hàm login, register... cũ giữ nguyên)
+
 
 /**
  * API: Lấy thông tin người dùng hiện tại (để check quyền)
@@ -549,7 +519,7 @@ export const deleteAccount = async () => {
 /**
  * API QUẢN LÝ (MANAGER)
  */
-// Thêm vào authService.js
+
 export const getProductById = async (productId) => {
     const response = await fetch(`http://localhost:8080/api/v1/products/${productId}`, {
         method: 'GET',
@@ -562,8 +532,8 @@ export const getProductById = async (productId) => {
     }
     return await response.json();
 };
-// Trong file authService.js
-// Thêm vào frontend/src/services/authService.js
+
+
 
 export const getAllProducts = async () => {
     try {

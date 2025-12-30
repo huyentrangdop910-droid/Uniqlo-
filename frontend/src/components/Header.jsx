@@ -1,42 +1,8 @@
-// frontend/src/components/Header.jsx
-/*mport React from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, Heart, ShoppingCart } from 'lucide-react';
-import './Header.css'; // Đảm bảo bạn có file CSS này
 
-const Header = ({ variant, onMenuEnter, onLogoClick }) => (
-  <header
-    // SỬA: Thêm className để chọn variant
-    className={`header-container ${variant === 'transparent' ? 'transparent' : 'solid'}`}
-  >
-    <div className="header-left">
-      <button onMouseEnter={onMenuEnter} className="floating-icon-button">
-        <Menu size={28} />
-      </button>
-      <span
-        className="header-logo"
-        onClick={onLogoClick}
-        style={{ cursor: 'pointer' }}
-      >
-        UNIQLO
-      </span>
-    </div>
-    <div className="header-right">
-      <button className="floating-icon-button">
-        <Heart size={28} />
-      </button>
-      <Link to="/cart" className="floating-icon-button">
-        <ShoppingCart size={28} />
-      </Link>
-    </div>
-  </header>
-);
-
-export default Header;*/
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Menu, Heart, ShoppingCart, MessageCircle, User } from 'lucide-react'; // <-- Thêm MessageCircle và User
-import CustomerChat from './CustomerChat'; // <-- Import component Chat (đảm bảo file này cùng thư mục)
+import { Menu, Heart, ShoppingCart, MessageCircle, User } from 'lucide-react'; 
+import CustomerChat from './CustomerChat'; 
 import './Header.css'; 
 
 const Header = ({ variant, onMenuEnter, onLogoClick }) => {

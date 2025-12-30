@@ -28,9 +28,7 @@ public class Product {
     
     private int stockQuantity; // Tồn kho
 
-    // --- QUAN TRỌNG: TRẠNG THÁI HIỂN THỊ ---
-    // Mặc định là true (Hiện) để 12 sản phẩm mẫu cũ vẫn hiện
-    // Nhưng khi Admin tạo mới qua API, Controller sẽ ép thành false
+    
     @Builder.Default 
     private boolean isActive = true; 
 

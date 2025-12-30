@@ -1,15 +1,6 @@
-// frontend/src/duLieu.js
+//
+// DỮ LIỆU BỘ SƯU TẬP 
 
-// DỮ LIỆU BỘ SƯU TẬP (Lấy từ HomePage.jsx của bạn)
-import img1 from './assets/images/vngoods_02_478849_3x4.avif';
-import img2 from './assets/images/vngoods_09_470173_3x4.avif';
-import img3 from './assets/images/vngoods_09_479767_3x4.avif';
-import img4 from './assets/images/vngoods_30_478528_3x4.avif';
-import img5 from './assets/images/vngoods_33_478848_3x4.avif';
-import img6 from './assets/images/vngoods_36_483301_3x4.avif';
-import img7 from './assets/images/vngoods_37_478861_3x4.avif';
-import img8 from './assets/images/vngoods_58_479619_3x4.avif';
-import img9 from './assets/images/vngoods_66_481486_3x4.avif';
 export const MOCK_COLLECTIONS = [
   {
     id: 1,
@@ -23,7 +14,7 @@ export const MOCK_COLLECTIONS = [
     description: 'Dáng ngắn với chi tiết cổ áo thanh lịch.',
     imageUrl: 'https://im.uniqlo.com/global-cms/spa/res0081881b3a12ec22be696b9148dad1ecfr.jpg'
   },
-  // ... (Tất cả các bộ sưu tập khác của bạn)
+  // thêm
    {
     id: 3,
     title: 'Trang Phục Len Thu Đông',
@@ -78,142 +69,7 @@ export const MOCK_COLLECTIONS = [
     imageUrl: 'https://im.uniqlo.com/global-cms/spa/res3d859c8cecfe15facedff6c372435c14fr.jpg?1759225441007'
   }
 ];
-/*export const MOCK_PRODUCTS = [
-  {
-    id: 201,
-    collectionId: 1,
-    name: 'Áo Khoác Trần Bông Dáng Dài',
-    price: '784.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-    imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/479209/item/vngoods_39_479209_3x4.jpg?width=294', // Đã có
-   //imageUrl: img1,
-    colors: ['#383B3C', '#D1C8C0', '#180930ff']
-  },
-  {
-    id: 202,
-    collectionId: 1,
-    name: 'Áo Khoác Lông Vũ Dáng Ngắn',
-    price: '984.000 VND',
-    sizes: 'S-L', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-   imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/478578001/item/vngoods_07_478578001_3x4.jpg?width=294', // Đã có
-   // imageUrl: img2,
-    colors: ['#383B3C', '#D1C8C0', '#77353C']
-  },
-  {
-    id: 203,
-    collectionId: 1,
-    name: 'Sanrio Characters Áo Thun',
-    price: '584.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-   imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/484470/item/vngoods_41_484470_3x4.jpg?width=294', // Đã có
-    //imageUrl: img3,
-    colors: ['#383B3C', '#D1C8C0', '#b9c41fff']
-  },
-  {
-    id: 204,
-    collectionId: 1,
-    name: 'Áo thun hoạ tiết',
-    price: '784.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-    imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/484469/item/vngoods_03_484469_3x4.jpg?width=294', // Đã có
-    //imageUrl: img4,
-    colors: [ '#D1C8C0',]
-  },
-  {
-    id: 205,
-    collectionId: 1,
-    name: 'Áo Cardigan Len Nữ',
-    price: '686.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-  imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/478336/item/vngoods_07_478336_3x4.jpg?width=294', // Đã có
-   // imageUrl: img5,
-    colors: ['#383B3C', '#D1C8C0',]
-  },
-  {
-    id: 206,
-    collectionId: 1,
-    name: 'Áo Len Cổ Tròn Hoạ Tiết',
-    price: '999.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-   // imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/482645/item/vngoods_03_482645_3x4.jpg?width=294', // Đã có
-    imageUrl: img6,
-    colors: ['#383B3C', '#fffbf8ff', '#c1b2b3ff']
-  },
-  {
-    id: 207,
-    collectionId: 1,
-    name: 'Áo Sơ Mi Vải Dạ',
-    price: '884.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
- imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/479086/item/vngoods_65_479086_3x4.jpg?width=294', // Đã có
-    //imageUrl: img7,
-    colors: ['#383B3C', '#D1C8C0', '#171b47ff']
-  },
-  {
-    id: 208,
-    collectionId: 1,
-    name: 'Quần Jean Ống Rộng',
-    price: '784.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-  imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/480740/item/vngoods_67_480740_3x4.jpg?width=294', // Đã có
-    //imageUrl: img8,
-    colors: ['#383B3C', '#110f23ff']
-  },
-  {
-    id: 209,
-    collectionId: 1,
-    name: 'Quần Dài Ống Suông Nữ',
-    price: '984.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-  imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/475344/item/vngoods_69_475344_3x4.jpg?width=294', // Đã có
-   // imageUrl: img9,
-    colors: ['#383B3C', '#D1C8C0', '#9a2733ff']
-  },
-  {
-    id: 210,
-    collectionId: 1,
-    name: 'Chân Váy Vải Saffon Xếp Tàng',
-    price: '484.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-  imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/480810/item/vngoods_57_480810_3x4.jpg?width=294', // Đã có
-   // imageUrl: img9,
-    colors: ['#383B3C', '#D1C8C0', '#dbb2b6ff']
-  },
-  {
-    id: 211,
-    collectionId: 1,
-    name: 'Quần Váy',
-    price: '684.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-  imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/479662/item/vngoods_09_479662_3x4.jpg?width=294', // Đã có
-   // imageUrl: img9,
-    colors: ['#383B3C', '#D1C8C0', '#844b17ff']
-  },
-  {
-    id: 212,
-    collectionId: 1,
-    name: 'Quần Sort',
-    price: '984.000 VND',
-    sizes: 'XS-XL', // Đã thêm
-    rating: { stars: 4.8, count: 102 }, // Đã thêm
-  imageUrl: 'https://image.uniqlo.com/UQ/ST3/vn/imagesgoods/473698/item/vngoods_31_473698_3x4.jpg?width=294', // Đã có
-   //imageUrl: img9,
-    colors: ['#383B3C', '#D1C8C0', '#696969ff']
-  },
-
-  // ... (Tự copy/paste thêm 6 sản phẩm còn lại của ID 1) ...
-];*/
+////
 
 // Du lieu menu
 export const MENU_CATEGORIES = [
@@ -227,18 +83,7 @@ export const MENU_CATEGORIES = [
   { name: 'Phụ Kiện', icon: 'Zap' },
   { name: 'Hàng bán chạy', icon: 'Flame' },
 ];
-/*export const MENU_CATEGORIES = [
-  // (Tôi đã ánh xạ các mục menu với ID bộ sưu tập của bạn)
-  { id: 1, name: 'Hàng Mới Về', icon: 'Newspaper' }, // -> Bô Sưu Tập Mùa Đông
-  { id: 2, name: 'Hàng bán chạy', icon: 'Flame' },   // -> Áo Khoác
-  { id: 3, name: 'Extra Size', icon: 'Ruler' },     // -> Trang Phục Len
-  { id: 7, name: 'Khuyến Mãi Có Hạn', icon: 'Percent' },// -> Jean
-  { id: 5, name: 'Áo', icon: 'Shirt' },             // -> Áo Thun
-  { id: 4, name: 'Quần', icon: 'Redo' },            // -> Quần Ống Rộng
-  { id: 8, name: 'Váy/Đầm', icon: 'Gift' },         // -> Chân Váy
-  { id: 9, name: 'Đồ Mặc Nhà', icon: 'HomeIcon' },  // -> Trang Phục Nỉ
-  { id: 6, name: 'Phụ Kiện', icon: 'Zap' },          // -> Vải Lanh
-];*/
+
 export const TOPICS_DATA = [
   {
     title: 'WEEKLY RECOMMENDATION',

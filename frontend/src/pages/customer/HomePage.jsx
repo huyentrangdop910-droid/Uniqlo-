@@ -1,15 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// SỬA: Xóa AuthModal, chúng ta dùng trang riêng
-// import AuthModal from '../../components/AuthModal.jsx'; 
-// THÊM: Import modal thông báo mới (sửa đường dẫn nếu cần)
+
 import LoginPromptModal from '../../components/LoginPromptModal'; 
 // Import các icon
 import {
   Menu, X, Heart, ShoppingCart, Home, Search, User,
   MapPin, Shirt, Newspaper, Zap, Percent, Ruler, Redo, HomeIcon, Gift
 } from 'lucide-react';
-// SỬA: Bỏ comment để import CSS
+
 import './HomePage.css';
 
 import { MOCK_COLLECTIONS, MENU_CATEGORIES, TOPICS_DATA } from '../../duLieu.js';
@@ -64,7 +62,7 @@ const VerticalSlider = React.forwardRef(({ setCurrentSlide }, ref) => {
           key={collection.id}
           className="slider-item"
           style={{ backgroundImage: `url(${collection.imageUrl})`, cursor: 'pointer'}}
-          onClick={() => navigate(`/collection/${collection.id}`)}// SỬA: Thêm điều hướng khi click vào slide
+          onClick={() => navigate(`/collection/${collection.id}`)}
         >
           <div className="slider-content">
             <h1>{collection.title}</h1>
@@ -75,7 +73,7 @@ const VerticalSlider = React.forwardRef(({ setCurrentSlide }, ref) => {
       ))}
     </div>
   );
-}); // Kết thúc forwardRef
+}); 
 
 
 
@@ -87,7 +85,7 @@ const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   
-  // SỬA: Xóa state modal đăng nhập, chỉ giữ lại modal thông báo
+
   const [isLoginPromptOpen, setIsLoginPromptOpen] = useState(false);
 
   const sliderRef = useRef(null);
@@ -116,10 +114,10 @@ const HomePage = () => {
     }
   };
   
-  // SỬA: Xử lý khi bấm OK trên modal thông báo -> Chuyển sang trang /auth
+
   const handleConfirmLogin = () => {
     setIsLoginPromptOpen(false); // Đóng modal thông báo
-    navigate('/auth'); // SỬA: Chuyển sang trang AuthPage
+    navigate('/auth'); 
   };
 
   return (
@@ -128,7 +126,7 @@ const HomePage = () => {
         variant="transparent"
         onMenuEnter={() => setIsMenuOpen(true)}
         onLogoClick={handleLogoClick}
-        // SỬA: Xóa onUserClick khỏi Header
+        
       />
 
       <main className="main-content">
@@ -166,85 +164,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
-// frontend/src/pages/customer/HomePage.jsx
-// ... (Tất cả các import ở trên cùng giữ nguyên) ...
-// THÊM: Import component SearchOverlay mới
 
-// ... (Các component Header, VerticalSlider, MenuOverlay giữ nguyên) ...
-
-// ===== Component HomePage Chính (ĐÃ CẬP NHẬT) =====
-/*const HomePage = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isLoginPromptOpen, setIsLoginPromptOpen] = useState(false);
-  
-  // THÊM MỚI: State để quản lý Lớp phủ Tìm kiếm
-  
-
-  const sliderRef = useRef(null);
-  const navigate = useNavigate();
-
-  const handleLogoClick = () => {
-    setCurrentSlide(0);
-    if (sliderRef.current) {
-      sliderRef.current.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  useEffect(() => {
-    const token = localStorage.getItem('userToken');
-    if (token) {
-      setIsAuthenticated(true);
-    }
-  }, []);
-
-  // SỬA: Hàm này bây giờ chỉ "trả về" một chuỗi (string)
-  const handleUserClick = () => {
-    if (isAuthenticated) {
-    navigate('/member');
-  } else {
-    setIsLoginPromptOpen(true); 
-  }
-  };
-  
-  const handleConfirmLogin = () => {
-    setIsLoginPromptOpen(false);
-    navigate('/login'); // Sửa lại tên file AuthPage nếu cần
-  };
-
-  return (
-    <div className="main-container">
-      <Header
-        variant="transparent"
-        onMenuEnter={() => setIsMenuOpen(true)}
-        onLogoClick={handleLogoClick}
-      />
-
-      <main className="main-content">
-       
-        <FloatingNavbar 
-          onHomeClick={handleLogoClick}
-          onUserClick={handleUserClick} // Truyền hàm đã sửa
-         
-          isSearchOpen={isSearchOpen}
-          onSearchClick={() => setIsSearchOpen(!isSearchOpen)} // Bật/tắt
-        />
-      </main> 
-      
-      <MenuOverlay
-        isOpen={isMenuOpen}
-        onClose={() => setIsMenuOpen(false)} 
-        onMenuLeave={() => setIsMenuOpen(false)} 
-      />
-      
-    
-      
-    
-
-    </div>
-  );
-};
-
-export default HomePage;*/
 

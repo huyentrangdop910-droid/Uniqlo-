@@ -1,4 +1,4 @@
-/* frontend/src/pages/customer/TrangChiTietSanPham.css */
+
 
 .pdp-page {
   background-color: #fff;
@@ -53,12 +53,12 @@
 
 @media (min-width: 992px) {
   .pdp-col-right {
-    /* Đây là chìa khóa cho hiệu ứng sticky */
+
     position: sticky;
     top: 6rem; /* Giữ nó ở 6rem (chiều cao header) */
     align-self: flex-start; /* Quan trọng */
     height: calc(100vh - 6rem); /* Chiều cao tối đa */
-    /*overflow-y: auto; /* Cho phép nó tự cuộn nếu bị dài */
+
   }
 }
 
@@ -187,7 +187,7 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  display: block; /* SỬA: Bảo nó chiếm 1 hàng */
+  display: block; 
   box-sizing: border-box;
   margin-top: 1rem;
 }
@@ -216,10 +216,7 @@
 .accordion-content p {
   margin: 0;
 }
-/* LAYOUT MỚI CHO GALLERY ẢNH */
-/* ===== THÊM MỚI: CSS CHO LAYOUT GHÉP ẢNH ===== */
 
-/* ===== THÊM MỚI: CSS CHO LAYOUT GHÉP ẢNH ===== */
 
 .pdp-image-collage {
   display: flex;

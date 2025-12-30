@@ -9,5 +9,5 @@ import java.util.List;
 public class CartDto {
     private Long id; // ID của giỏ hàng
     private List<CartItemDto> items; // Danh sách các món hàng
-    // (Sau này chúng ta có thể thêm tổng tiền, voucher... ở đây)
+    
 }

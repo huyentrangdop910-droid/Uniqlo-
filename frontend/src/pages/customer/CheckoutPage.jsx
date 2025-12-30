@@ -6,11 +6,10 @@ import { getCart } from '../../services/authService'; // API lấy giỏ hàng
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './CheckoutPage.css';
-import {  placeOrder } from '../../services/authService'; // Thêm placeOrder
-import { getMyAddresses } from '../../services/authService'; // API lấy địa chỉ
-import AddressBook from '../../components/AddressBook'; // Component sổ địa chỉ
-import { X } from 'lucide-react'; // Icon đóng modal
-
+import {  placeOrder } from '../../services/authService'; 
+import { getMyAddresses } from '../../services/authService'; 
+import AddressBook from '../../components/AddressBook'; 
+import { X } from 'lucide-react'; 
 const CheckoutPage = () => {
   const navigate = useNavigate();
   const location = useLocation();

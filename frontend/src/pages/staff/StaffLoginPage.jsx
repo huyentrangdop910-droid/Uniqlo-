@@ -32,9 +32,9 @@ const StaffLoginPage = () => {
       // Nếu là STAFF -> Vào trang Dashboard Nhân Viên
       if (profile.role === 'STAFF') {
         alert(`Xin chào nhân viên: ${profile.fullName || profile.username}`);
-        navigate('/staff/dashboard'); // <--- ĐÃ SỬA: Trỏ đúng về trang StaffDashboard
+        navigate('/staff/dashboard'); 
       } 
-      // Nếu là ADMIN -> Vào trang Admin Dashboard (hoặc Staff Dashboard tùy bạn muốn)
+      
       else if (profile.role === 'ADMIN') {
         alert(`Xin chào Sếp: ${profile.fullName || profile.username}`);
         navigate('/admin/dashboard'); // Admin thì vẫn về trang quản lý to nhất

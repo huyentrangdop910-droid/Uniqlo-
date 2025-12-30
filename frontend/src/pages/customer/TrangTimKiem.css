@@ -1,4 +1,4 @@
-/* frontend/src/pages/customer/TrangTimKiem.css */
+
 
 /* 1. KHUNG APP CỐ ĐỊNH */
 .search-page-layout {
@@ -67,23 +67,7 @@
   color: #777;
 }
 
-/* 3b. GHI ĐÈ CSS CỦA ThanhDieuHuongNoi */
-/* Bảo nó nằm yên bên trong footer, không "nổi" nữa */
-/*.search-page-footer-fixed .floating-nav {
-    
-    
-  position: fixed; 
-  bottom: 0; 
-  width: 100%;
-  max-width: 400px; 
-  margin:0 auto; 
-  padding: 0; /
-  
-  justify-content: center;
-  gap: 5rem; 
-  
-  
-}*/
+
 .search-page-footer-fixed .floating-nav {
   position: relative !important; 
   bottom: auto !important; 

@@ -30,11 +30,11 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
     @Column(name = "avatar_url") // Tên cột trong Database
-    private String avatarUrl;    // <-- THÊM DÒNG NÀY VÀO
+    private String avatarUrl;    
 
     private String phone;
     private String address;
-    // ... (các trường id, username, password, role giữ nguyên) ...
+    
 
     // THÊM 3 TRƯỜNG MỚI
     private String fullName;

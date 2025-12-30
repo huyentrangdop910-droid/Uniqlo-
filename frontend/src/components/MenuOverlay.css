@@ -3,18 +3,18 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* SỬA: Không cao 100%, mà cao tối đa 90% và tự cuộn */
+  
   height: auto;
-  max-height: 75vh; /* Chỉ cao tối đa 90% màn hình */
+  max-height: 75vh; 
   
   background-color: white;
   z-index: 100;
   display: flex;
   flex-direction: column;
   animation: fadeIn 0.3s ease-out;
-  overflow-y: auto; /* Cho phép cuộn NẾU nội dung dài hơn 90vh */
+  overflow-y: auto; 
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  /* SỬA: Thêm bo góc dưới */
+ 
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
 }
@@ -24,7 +24,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem; 
-  /* THÊM: Giữ header cố định khi cuộn menu */
+  
   position: sticky;
   top: 0;
   background-color: white;
@@ -35,7 +35,7 @@
   color: #333;
   text-shadow: none;
 }
-/* SỬA: Style cho nút X (đổi tên class) */
+
 .menu-header .close-button {
   background-color: #f0f0f0;
   border: none;
@@ -94,7 +94,7 @@
   flex-shrink: 0; /* Giữ icon không bị co lại */
 }
 
-/* THÊM: Style cho phần TOPICS */
+
 .topics-section {
   padding: 1.5rem 1.5rem 2rem 1.5rem;
   margin-top: 1rem;
@@ -148,7 +148,7 @@
 }
 
 
-/* THÊM: Style cho phần Thông Tin Cửa Hàng */
+
 .store-info-section {
   padding: 1.5rem 1.5rem 2rem 1.5rem;
   margin-top: 1rem;

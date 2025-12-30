@@ -1,4 +1,4 @@
-/* frontend/src/pages/customer/TrangGioHang.css */
+
 .cart-page-main {
   padding-top: 6rem; /* Đẩy xuống dưới Header */
   max-width: 1280px;
@@ -123,7 +123,7 @@
   cursor: pointer;
 }
 
-/* THÊM MỚI: Điều chỉnh lại độ rộng các cột */
+
 .cart-table-header th:nth-child(1) { width: 5%; }  /* Ô tích */
 .cart-table-header th:nth-child(2) { width: 35%; } /* Sản phẩm */
 .cart-table-header th:nth-child(3) { width: 15%; } /* Đơn giá */
@@ -131,7 +131,7 @@
 .cart-table-header th:nth-child(5) { width: 15%; } /* Thành Tiền */
 .cart-table-header th:nth-child(6) { width: 15%; } /* Thao tác */
 
-/* THÊM MỚI: Style cho nút Mua Hàng (khi nó là Link) */
+
 .cart-checkout-button {
   display: inline-block; /* Cho phép Link hoạt động như button */
   text-decoration: none; /* Bỏ gạch chân */
@@ -148,7 +148,7 @@
 .cart-checkout-button:hover {
   background-color: #333;
 }
-/* THÊM VÀO CUỐI: CSS cho nút Phân loại */
+
 .cart-item-variant-button {
   background: #f8f9fa;
   border: 1px solid #e5e5e5;
